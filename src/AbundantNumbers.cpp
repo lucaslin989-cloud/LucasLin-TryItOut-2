@@ -16,10 +16,39 @@ string abundantNum(){
     int numInput = 0;
     int numSum = 0;
     string result;
+
+    while(true) {
+        cout<<"Enter a number (-1 to quit): ";  
+        
+        cin>>numInput;
+
+        if(numInput== -1){
+            break;
+        }
+
+
+        for(int i=1;i<numInput;i++){
+            if(numInput%i==0){
+                numSum+=i;
+            }
+        }
+
+        if (numSum<numInput){
+            result ="a deficient number";
+        }else if (numSum==numInput){
+            result="a perfect number";
+        }else{
+            result="an aboundant number";
+        }
+
+
+
+
+    
+    
     
     //TODO: Create a loop that will execute the program until the user inputs -1
-        cout << "Enter a number (-1 to quit): ";
-        //TODO: Prompt the user to input a number. Use the numInput variable.
+    //TODO: Prompt the user to input a number. Use the numInput variable.
 
         //TODO: Create the main logic that will calculate if a number is abundant
         //      Start by creating a for loop that will iterate from 1 to the number
@@ -44,6 +73,7 @@ string abundantNum(){
         ss_input.clear(); // Clear any error flags
         ss_result.str("");
         ss_result.clear();
+    }
      
     return testResult;
 }
